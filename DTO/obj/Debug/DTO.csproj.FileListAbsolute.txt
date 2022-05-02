@@ -1,0 +1,6 @@
+C:\Users\doyle\Documents\C# Udemy Course\CodingWebsite\CodeCourse\DTO\bin\Debug\DTO.dll
+C:\Users\doyle\Documents\C# Udemy Course\CodingWebsite\CodeCourse\DTO\bin\Debug\DTO.pdb
+C:\Users\doyle\Documents\C# Udemy Course\CodingWebsite\CodeCourse\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\doyle\Documents\C# Udemy Course\CodingWebsite\CodeCourse\DTO\obj\Debug\DTO.dll
+C:\Users\doyle\Documents\C# Udemy Course\CodingWebsite\CodeCourse\DTO\obj\Debug\DTO.pdb
+C:\Users\doyle\Documents\C# Udemy Course\CodingWebsite\CodeCourse\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
