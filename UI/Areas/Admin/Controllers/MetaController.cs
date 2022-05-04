@@ -61,8 +61,7 @@ namespace UI.Areas.Admin.Controllers
         {
 
             if (ModelState.IsValid)
-            {
-                Console.WriteLine(model);
+            { 
                 if (bll.UpdateMeta(model))
                 {
                     ViewBag.ProcessState = General.Messages.UpdateSuccess;

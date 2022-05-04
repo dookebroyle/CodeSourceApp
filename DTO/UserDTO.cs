@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Web;
 
 namespace DTO
 {
@@ -18,7 +18,11 @@ namespace DTO
         public string Email { get; set; }
         public string ImagePath { get; set; }
         public string Name { get; set; }
-        public bool IsAdmin { get; set; }
+        public bool isAdmin { get; set; }
+        public bool isDeleted { get; set; }
+
+        [Display(Name = "User Image")]
+        public HttpPostedFileBase UserImage { get; set; }
 
     }
 }

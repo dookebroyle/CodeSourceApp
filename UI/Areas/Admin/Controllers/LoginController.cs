@@ -26,7 +26,7 @@ namespace UI.Areas.Admin.Controllers
                 if(user.ID != 0)
                 {
                     UserStatic.UserID = user.ID;
-                    UserStatic.IsAdmin = user.IsAdmin;
+                    UserStatic.isAdmin = user.isAdmin;
                     UserStatic.NameSurname = user.Name;
                     UserStatic.ImagePath = user.ImagePath;
                     LogBLL.AddLog(General.ProcessType.Login, General.TableName.Login, 12);

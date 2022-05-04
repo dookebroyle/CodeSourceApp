@@ -41,7 +41,7 @@ namespace BLL
 
         public bool UpdateMeta(MetaDTO model)
         {
-            //this is returning no metaID
+            
             dao.UpdateMeta(model);
             LogDAO.AddLog(General.ProcessType.MetaUpdate, General.TableName.Meta, model.MetaID);
             return true;

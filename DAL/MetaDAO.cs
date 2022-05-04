@@ -37,10 +37,7 @@ namespace DAL
                 metalist.Add(dto);
             }
             return metalist;
-            foreach (var item in metalist)
-            {
-                Console.WriteLine(item.MetaID);
-            }
+
         }
 
         public MetaDTO GetMetaWithID(int iD)
@@ -53,7 +50,7 @@ namespace DAL
                 dto.Name = meta.Name;
                 dto.MetaContent = meta.MetaContent;
                 return dto;
-                Console.WriteLine(dto.MetaID);
+
             }
             catch (Exception)
             {
@@ -68,7 +65,6 @@ namespace DAL
             try
             {
                 Meta meta = db.Metas.First(x => x.ID == model.MetaID);
-                Console.WriteLine(meta.ID);
                 meta.Name = model.Name;
                 meta.MetaContent = model.MetaContent;
                 meta.LastUpdateDate = DateTime.Now;

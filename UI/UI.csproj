@@ -128,9 +128,16 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AddressController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FavController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MetaController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SocialMediaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,6 +166,36 @@
     <Content Include="Areas\Admin\Views\Shared\MessageForm.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\MetaList.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\UpdateMeta.cshtml" />
+    <Content Include="Areas\Admin\Views\Address\AddAddress.cshtml" />
+    <Content Include="Areas\Admin\Views\Address\AddressList.cshtml" />
+    <Content Include="Areas\Admin\Views\Address\Partial\AddressForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Address\UpdateAddress.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\AddAds.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\AdsList.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\Partial\AdForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\UpdateAd.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\AddCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\CategoryList.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Partial\CategoryForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Fav\Partial\FavForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Fav\UpdateFav.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\AddSocialMedia.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\Partial\SocialMediaForm.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\SocialMediaList.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\UpdateSocialMedia.cshtml" />
+    <Content Include="Areas\Admin\Views\User\AddUser.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Partial\UserForm.cshtml" />
+    <Content Include="Areas\Admin\Views\User\UpdateUser.cshtml" />
+    <Content Include="Areas\Admin\Views\User\UserList.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\AddVideo.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\Partial\VideoForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\UpdateVideo.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\VideoList.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\PostList.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\UpdatePost.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Partial\PostForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\AddPost.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
