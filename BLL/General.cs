@@ -60,7 +60,7 @@ namespace BLL
             public static string social = "Social Media";
             public static string User = "User";
             public static string Video = "Video";
-            public static string post = "Post";
+            public static string Post = "Post";
             public static string Image = "Image";
             public static string Tag = "Tag";
             public static string Comment = "Comment";

@@ -25,11 +25,11 @@
         <div class="col-md-9">
             @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
             <script src="~/Areas/Admin/Content/JS/ckeditor/ckeditor.js"></script>
+            <script src="~/Areas/Admin/Content/JS/ckeditor/ckeditor.js"></script>
             <div class="box box-primary">
                 @using (Html.BeginForm("AddPost", "Post", FormMethod.Post, new { @enctype = "multipart/form-data" }))
                 {
-                    @Html.Partial("Partial/PostForm")
-                }
+        @Html.Partial("Partial/PostForm")}
             </div>
         </div>
     </div>
