@@ -81,6 +81,24 @@ namespace DAL
             }
         }
 
+        public void DeleteAddress(int iD)
+        {
+            try
+            {
+                Address ads = db.Addresses.First(x => x.ID == iD);
+                ads.isDeleted = true;
+                ads.DeletedDate = DateTime.Now;
+                ads.LastUpdateDate = DateTime.Now;
+                ads.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public void UpdateAddress(AddressDTO model)
         {
             try

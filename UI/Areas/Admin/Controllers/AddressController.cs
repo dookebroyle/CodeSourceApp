@@ -73,6 +73,12 @@ namespace UI.Areas.Admin.Controllers
             
             return View(model);
         }
+
+        public JsonResult DeleteAddress(int ID)
+        {
+            bll.DeleteAddress(ID);
+            return Json("");
+        }
        
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using System.Diagnostics;
 
 namespace BLL
 {
@@ -45,6 +46,12 @@ namespace BLL
             dao.UpdateMeta(model);
             LogDAO.AddLog(General.ProcessType.MetaUpdate, General.TableName.Meta, model.MetaID);
             return true;
+        }
+
+        public void DeleteMeta(int ID)
+        {
+            dao.DeleteMeta(ID);
+            LogDAO.AddLog(General.ProcessType.MetaDelete, General.TableName.Meta, ID);
         }
     }
 }

@@ -12,8 +12,10 @@ namespace DTO
     {
         public int MetaID { get; set; }
         public string Name { get; set; }
-        [Required(ErrorMessage = "Please fill the content area.")]
+        [Required(ErrorMessage = "Please fill the content area")]
         public string MetaContent { get; set; }
-        
+
+       
+
     }
 }

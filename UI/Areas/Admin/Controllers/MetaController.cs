@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DTO;
 using BLL;
+using System.Diagnostics;
 
 namespace UI.Areas.Admin.Controllers
 {
@@ -76,6 +77,13 @@ namespace UI.Areas.Admin.Controllers
                 ViewBag.ProcessState = General.Messages.EmptyArea;
             }
             return View(model);
+        }
+        [HttpPost]
+        public JsonResult DeleteMeta(int ID)
+        {
+
+            bll.DeleteMeta(ID);
+            return Json("");
         }
     }
 }
