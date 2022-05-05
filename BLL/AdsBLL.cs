@@ -45,5 +45,11 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.AdsUpdate, General.TableName.Ads, model.ID);
             return oldImagePath;
         }
+
+        public void DeleteAd(int iD)
+        {
+            dao.DeleteAd(iD);
+            LogDAO.AddLog(General.ProcessType.AdsDelete, General.TableName.Ads, iD);
+        }
     }
 }

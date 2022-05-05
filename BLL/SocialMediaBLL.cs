@@ -46,5 +46,10 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.SocialUpdate, General.TableName.social, model.ID);
             return oldImagePath;
         }
+
+        public void DeleteSocial(int iD)
+        {
+            dao.DeleteSocial(iD);
+        }
     }
 }

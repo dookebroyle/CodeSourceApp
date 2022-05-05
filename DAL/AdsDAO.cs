@@ -26,34 +26,69 @@ namespace DAL
 
         public List<AdsDTO> GetAds()
         {
-            List<Ad> list = db.Ads.Where(x => x.isDeleted == false).ToList();
-            List<AdsDTO> dtolist = new List<AdsDTO>();
-            foreach (var item in list)
+            try
             {
-                AdsDTO dto = new AdsDTO
+                List<Ad> list = db.Ads.Where(x => x.isDeleted == false).ToList();
+                List<AdsDTO> dtolist = new List<AdsDTO>();
+                foreach (var item in list)
                 {
-                    ID = item.ID,
-                    Name = item.Name,
-                    Link = item.Link,
-                    ImagePath = item.ImagePath
-                };
-                dtolist.Add(dto);
+                    AdsDTO dto = new AdsDTO
+                    {
+                        ID = item.ID,
+                        Name = item.Name,
+                        Link = item.Link,
+                        ImagePath = item.ImagePath
+                    };
+                    dtolist.Add(dto);
+                }
+                return dtolist;
             }
-            return dtolist;
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public AdsDTO GetAdWithID(int iD)
         {
-            Ad ad = db.Ads.First(x => x.ID == iD);
-            AdsDTO dto = new AdsDTO
+            try
             {
-                ID = ad.ID,
-                Name = ad.Name,
-                ImagePath = ad.ImagePath,
-                Link = ad.ImagePath,
-                ImageSize = ad.Size
-            };
-            return dto;
+                Ad ad = db.Ads.First(x => x.ID == iD);
+                AdsDTO dto = new AdsDTO
+                {
+                    ID = ad.ID,
+                    Name = ad.Name,
+                    ImagePath = ad.ImagePath,
+                    Link = ad.ImagePath,
+                    ImageSize = ad.Size
+                };
+                return dto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void DeleteAd(int iD)
+        {
+            try
+            {
+
+                Ad ads = db.Ads.First(x => x.ID == iD);
+                ads.isDeleted = true;
+                ads.DeletedDate = DateTime.Now;
+                ads.LastUpdateDate = DateTime.Now;
+                ads.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public string UpdateAds(AdsDTO model)

@@ -52,6 +52,25 @@ namespace DAL
             }
         }
 
+        public void DeleteVideo(int iD)
+        {
+            try
+            {
+
+                Video video = db.Videos.First(x => x.ID == iD);
+                video.isDeleted = true;
+                video.DeletedDate = DateTime.Now;
+                video.LastUpdateDate = DateTime.Now;
+                video.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public void UpdateVideo(VideoDTO model)
         {
             try
@@ -74,17 +93,25 @@ namespace DAL
 
         public VideoDTO GetVideoWithID(int iD)
         {
-            Video video = db.Videos.First(x => x.ID == iD);
-            VideoDTO videodto = new VideoDTO
+            try
             {
-                ID = video.ID,
-                VideoPath = video.VideoPath,
-                Title = video.Title,
-                OriginalVideoPath = video.OriginalVideoPath,
-                AddDate = video.AddDate,
-                AddUserID = video.AddUserID
-            };
-            return videodto;
+                Video video = db.Videos.First(x => x.ID == iD);
+                VideoDTO videodto = new VideoDTO
+                {
+                    ID = video.ID,
+                    VideoPath = video.VideoPath,
+                    Title = video.Title,
+                    OriginalVideoPath = video.OriginalVideoPath,
+                    AddDate = video.AddDate,
+                    AddUserID = video.AddUserID
+                };
+                return videodto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 

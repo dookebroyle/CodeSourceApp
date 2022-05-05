@@ -87,5 +87,11 @@ namespace UI.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+        public JsonResult DeleteVideo(int ID)
+        {
+            bll.DeleteVideo(ID);
+            return Json("");
+        }
     }
 }

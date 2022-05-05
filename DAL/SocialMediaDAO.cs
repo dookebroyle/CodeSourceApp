@@ -70,6 +70,25 @@ namespace DAL
                 
         }
 
+        public void DeleteSocial(int iD)
+        {
+            try
+            {
+
+                SocialMedia social = db.SocialMedias.First(x => x.ID == iD);
+                social.isDeleted = true;
+                social.DeletedDate = DateTime.Now;
+                social.LastUpdateDate = DateTime.Now;
+                social.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public string UpdateSocialMedia(SocialMediaDTO model)
         {
             try

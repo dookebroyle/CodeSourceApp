@@ -104,5 +104,10 @@ namespace UI.Areas.Admin.Controllers
             }
             return View(model);
         }
+        public JsonResult DeleteAds(int ID)
+        {
+            bll.DeleteAd(ID);
+            return Json("");
+        }
     }
 }

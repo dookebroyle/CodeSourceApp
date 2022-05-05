@@ -112,5 +112,10 @@ namespace UI.Areas.Admin.Controllers
             }
             return View(model);
         }
+        public JsonResult DeleteSocial(int ID)
+        {
+            bll.DeleteSocial(ID);
+            return Json("");
+        }
     }
 }

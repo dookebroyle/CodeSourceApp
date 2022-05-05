@@ -23,7 +23,7 @@
 
 <div class="card">
     <div class="card-header">
-        
+
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -49,9 +49,9 @@
                                 <img src="~/Areas/Admin/Content/icons/updates-16.ico" />
                             </a>
                         <td align="center" valign="middle">
-                            <a>
+                            <a href="#">
                                 <br />
-                                <img src="~/Areas/Admin/Content/icons/delete-16.ico" />
+                                <img src="~/Areas/Admin/Content/icons/delete-16.ico" onclick="AskQuestion('/Admin/Video/DeleteVideo/',@item.ID)" />
                             </a>
                         </td>
                     </tr>
@@ -68,7 +68,9 @@
             </tfoot>
         </table>
     </div>
-    <!-- /.card-body -->
+
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModalMessage.cshtml")
 </div>
+<script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
 
 

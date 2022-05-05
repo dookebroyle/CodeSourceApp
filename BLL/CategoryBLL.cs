@@ -13,6 +13,7 @@ namespace BLL
     public class CategoryBLL
     {
         CategoryDAO dao = new CategoryDAO();
+        PostBLL postbll = new PostBLL();
         public bool AddCategory(CategoryDTO model)
         {
             Category category = new Category
@@ -49,6 +50,24 @@ namespace BLL
             dao.UpdateCategory(model);
             LogDAO.AddLog(General.ProcessType.CategoryUpdate, General.TableName.Category, model.ID);
             return true;
+        }
+
+        public List<PostImageDTO> DeleteCategory(int iD)
+        {
+            List<Post> postlist = dao.DeleteCategory(iD);
+           
+            LogDAO.AddLog(General.ProcessType.PostDelete, General.TableName.Post, iD);
+            List<PostImageDTO> imagelist = new List<PostImageDTO>();
+            foreach(var item in postlist)
+            {
+                List<PostImageDTO> imagelist2 = postbll.DeletePost(item.ID);
+                LogDAO.AddLog(General.ProcessType.PostDelete, General.TableName.Post, item.ID);
+                foreach(var item2 in imagelist2)
+                {
+                    imagelist.Add(item2);
+                }
+            }
+            return imagelist;
         }
     }
 }
