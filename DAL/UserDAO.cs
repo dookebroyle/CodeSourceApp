@@ -57,6 +57,25 @@ namespace DAL
             return userlist;
         }
 
+        public string DeleteUser(int iD)
+        {
+            try
+            {
+                T_User user = db.T_User.First(x => x.ID == iD);
+                user.isDeleted = true;
+                user.DeletedDate = DateTime.Now;
+                user.LastUpdateDate = DateTime.Now;
+                user.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+                return user.ImagePath;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public string UpdateUser(UserDTO model)
         {
             try
